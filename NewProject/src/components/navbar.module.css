@@ -1,0 +1,89 @@
+.container {
+  height: 60px;
+  background-color: #757de8;
+  position: sticky;
+  top: 0px;
+}
+.header {
+  max-width: 1440px;
+  height: 60px;
+  margin: 0 auto;
+  background-color: #757de8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerCon {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.logo a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.logo a h1 {
+  margin-right: 20px;
+}
+.menu {
+  display: flex;
+  list-style-type: none;
+}
+.menu li {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17.161px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-right: 45px;
+  cursor: pointer;
+}
+.menu li p {
+  border-bottom: 2px solid transparent;
+}
+.menu li p:hover {
+  border-bottom: 2px solid #dedeff;
+  transition: 0.5s;
+}
+.boxIcon {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartIcon {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+.cartIcon:hover {
+  color: red;
+  transition: 0.5s;
+}
+.login a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17.161px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-right: 45px;
+  margin: auto;
+}
+.cartIcon p {
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  top: -5px;
+  right: -10px;
+  text-align: center;
+}

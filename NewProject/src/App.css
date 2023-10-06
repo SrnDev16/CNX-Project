@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;600&family=Poppins:wght@100&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+}

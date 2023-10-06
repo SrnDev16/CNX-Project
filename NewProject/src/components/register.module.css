@@ -1,0 +1,32 @@
+.myForm {
+  margin-top: 10px;
+  width: 100%;
+}
+.myForm input,
+.myForm small,
+.myForm button {
+  display: block;
+  width: 100%;
+}
+.myForm input,
+.myForm button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+.myForm input {
+  background-color: #f9f9f9;
+  box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+.myForm button {
+  background-image: linear-gradient(to right, #3f51b5, #757de8);
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 20px;
+}
+label{
+  display: block;
+  margin-top: 15px;
+}
