@@ -89,6 +89,7 @@ const CartPage = () => {
                 alignItems: "center",
                 mt: 2,
                 borderBottom: "1px solid #ccc",
+                flexWrap: "wrap",
               }}
             >
               <img
@@ -136,7 +137,7 @@ const CartPage = () => {
           ""
         ) : (
           <Box sx={{ mt: 2 ,display:"flex",justifyContent:"space-evenly"}}>
-            <h3>Total Price : {total} $</h3>
+            <h3>Total Price : {total.toFixed(2)} $</h3>
             <Button variant="contained">Checkout</Button>
           </Box>
         )}

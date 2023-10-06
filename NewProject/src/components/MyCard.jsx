@@ -57,6 +57,7 @@ const MyCard = ({ item ,handleAddToCart}) => {
               display: "flex",
               justifyContent: "space-between",
               width: "100%",
+              flexWrap: "wrap",
             }}
           >
             <IconButton

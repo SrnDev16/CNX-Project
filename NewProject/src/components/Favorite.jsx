@@ -16,37 +16,41 @@ import CardMedia from "@mui/material/CardMedia";
 import { FaTrashAlt } from "react-icons/fa";
 
 const Favorite = () => {
-  const { fav, setFav,cart,setCart ,products } = useContext(DataContext);
+  const { fav, setFav,cart,setCart ,products,isLogin } = useContext(DataContext);
  
-
   const handleAddToCart = (id) => {
-    const having = cart.some((item) => item.id === id);
-    if(having) {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Add to Cart success.",
-        showConfirmButton: false,
-        timer: 1000,
-      }).then(() => {
-        const index = cart.findIndex((item) => item.id === id)
-        const product = cart.find((item) => item.id === id);
-        const newProduct = { ...product , quantity: product.quantity += 1 };
-        cart.splice(index, 1, newProduct); 
-      }); 
+    if(isLogin){
+      const having = cart.some((item) => item.id === id);
+      if(having) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Add to Cart success.",
+          showConfirmButton: false,
+          timer: 1000,
+        }).then(() => {
+          const index = cart.findIndex((item) => item.id === id)
+          const product = cart.find((item) => item.id === id);
+          const newProduct = { ...product , quantity: product.quantity += 1 };
+          cart.splice(index, 1, newProduct); 
+        }); 
+      }else{
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Add to Cart success.",
+          showConfirmButton: false,
+          timer: 1000,
+        }).then(() => {
+          const newItem = products.find((item) => item.id === id);
+          newItem["quantity"] = 1;
+          setCart([...cart, newItem]);
+        });
+      }
     }else{
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Add to Cart success.",
-        showConfirmButton: false,
-        timer: 1000,
-      }).then(() => {
-        const newItem = products.find((item) => item.id === id);
-        newItem["quantity"] = 1;
-        setCart([...cart, newItem]);
-      });
+      Swal.fire("warning", "Please login first.","info")
     }
+   
   };
 
   const deleteFav = (id) => {
@@ -84,10 +88,10 @@ const FavCard = ({ item, deleteFav ,handleAddToCart}) => {
 
  
   return (
-    <Grid item lg={3} >
+    <Grid item lg={3} md={3} sm={6} xs={6}>
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
-          sx={{ height: 200, objectFit: "contain" }}
+          sx={{ height: 200, objectFit: "contain"  }}
           component="img"
           image={item.image}
           title="green iguana"

@@ -8,6 +8,7 @@
   max-width: 1440px;
   height: 60px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   background-color: #757de8;
   display: flex;
   justify-content: space-between;
@@ -48,8 +49,14 @@
   border-bottom: 2px solid #dedeff;
   transition: 0.5s;
 }
+.box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .boxIcon {
   height: 60px;
+  width: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +67,6 @@
   font-size: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 1.5rem;
 }
 .cartIcon:hover {
   color: red;
@@ -74,7 +80,6 @@
   font-weight: 500;
   line-height: normal;
   padding-right: 45px;
-  margin: auto;
 }
 .cartIcon p {
   position: absolute;
@@ -86,4 +91,47 @@
   top: -5px;
   right: -10px;
   text-align: center;
+}
+.mobileIcon{
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  display: none;
+}
+
+@media screen and (max-width: 720px){
+  .mobileIcon{
+    display: block;
+    margin-left: 15px;
+  } 
+  .header{
+    z-index: 4;
+  }
+  .boxIcon{
+    width: 100px;
+  }
+  .menu {
+    flex-direction: column;
+    background-color: #757de8;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: -10;
+  }
+  .menu.active{
+    transition: 0.5s ease;
+    opacity: 1;
+    z-index: 10;
+  }
+  .menu li {
+    margin: 0;
+    padding: 0;
+  }
+  .login a {
+    padding: 0;
+  }
 }

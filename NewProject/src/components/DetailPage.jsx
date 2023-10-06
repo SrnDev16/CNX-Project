@@ -80,7 +80,7 @@ const DetailPage = () => {
               <br />
               <Button
                 variant="contained"
-                sx={{ color: "#FFFFFF", background: "#757de8" }}
+                sx={{ color: "#FFFFFF", background: "#757de8" ,mb: 3}}
                 onClick={() => handleAddToCart(detail.id)}
               >
                 Add to cart
